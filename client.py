@@ -1,14 +1,7 @@
+#%%
 import requests
 
-response = requests.get("http://google.com")
+response = requests.get("http://127.0.0.1:5000")
 
 print(response.text)
-
-# Next, get the information about Luke Skywalker from SWAPI!
-#
-# https://swapi.dev/api/people/1/
-#
-# After getting it, print their height and eye color
-#
-# Hint: you'll probably need to access the json body of the response with the
-# json() method
+# %%
