@@ -32,7 +32,7 @@ def sneaker_1(sneaker_id):
     <h2><a href="/">go back home</a></h2>
     """
 
-@app.route("/api/salute/<name>/<int:age>/<str:course>")
+@app.route("/api/salute/<name>/<int:age>/<course>")
 def salute(name, age, course):
     return jsonify({"message": f"Hello {name}, with {age} years of age from {course} course"})
 
