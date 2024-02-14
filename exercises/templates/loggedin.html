@@ -7,10 +7,11 @@
   </head>
   <body>
     <div>
-      modify this html markup to either render:
+      {% if logged_in %}
       <p>Welcome to the private area</p>
-      or
+      {% else %}
       <p>You're not logged in, get out!</p>
+      {% endif %}
     </div>
   </body>
 </html>
