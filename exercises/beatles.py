@@ -12,6 +12,7 @@ beatles = [
 
 @app.route("/")
 def index():
+    render_band = True
     return render_template("beatles.html", band=beatles)
 
 

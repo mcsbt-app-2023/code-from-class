@@ -10,12 +10,12 @@ def index():
 
 @app.route("/about")
 def about():
-    return send_from_directory("files", "about.html")
+    return render_template("about.html")
 
 
 @app.route("/login")
 def login():
-    return send_from_directory("files", "login.html")
+    return render_template("login.html")
 
 
 @app.route("/static/style.css")

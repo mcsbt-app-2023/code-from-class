@@ -2,9 +2,12 @@
 {% extends "base.html" %}
 
 <!-- This is the title block -->
-{% block title %}Index {% endblock %}
+{% block title %}login {% endblock %}
 
 <!-- This is the main block -->
 {% block main %}
-<p>get an account <a href="/login">here</a></p>
+<form action="">
+  <input type="text" name="username" id="" />
+  <input type="password" name="password" id="" />
+</form>
 {% endblock %}
