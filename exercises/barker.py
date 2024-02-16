@@ -4,6 +4,12 @@ app = Flask(__name__)
 
 users_database = {"churro": "pepepassword", "gnochhi": "gnocchipassword"}
 
+# hashing values cheatsheet:
+# import a hash function from hashlib module (sha1, for example)
+# instantiate it: hash = sha1()
+# update it: hash.update("potato".encode()) # notice encoding, it's mandatory
+# get the hex digest with hash.hexdigest()
+
 
 @app.route("/")
 def index():
