@@ -1,3 +1,4 @@
+import hashlib
 from flask import (
     Flask,
     send_from_directory,
@@ -38,12 +39,19 @@ def login():
     return render_template("login.html")
 
 
+def hash_value(string):
+    hash = hashlib.sha1()
+    hash.update(string.encode())
+    return hash.hexdigest()
+
+
 @app.route("/handle-login", methods=["POST"])
 def handle_login():
     username = request.form["username"]
     password = request.form["password"]
+    hashed_password = hash_value(password)
 
-    if username in users_database and users_database[username] == password:
+    if username in users_database and users_database[username] == hashed_password:
         session["username"] = username
         return redirect("/")
     else:
