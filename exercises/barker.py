@@ -34,6 +34,11 @@ def about():
     return render_template("about.html")
 
 
+@app.route("/register")
+def register():
+    return render_template("register.html")
+
+
 @app.route("/login")
 def login():
     return render_template("login.html")
@@ -56,6 +61,21 @@ def handle_login():
         return redirect("/")
     else:
         return redirect("/register")
+
+
+@app.route("/handle-register", methods=["POST"])
+def handle_register():
+    username = request.form["username"]
+    password = hash_value(request.form["password"])
+
+    if username in users_database:
+        return "username already taken", 403
+
+    session["username"] = username
+
+    users_database[username] = password
+
+    return redirect("/")
 
 
 @app.route("/static/style.css")
